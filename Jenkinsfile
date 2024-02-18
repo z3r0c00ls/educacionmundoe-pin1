@@ -12,7 +12,10 @@ pipeline {
    stage('Building image') {
       steps{
           sh '''
+	  pwd
+	  ls -ltr
           cd ./webapp
+	  ls -ltr
           docker build -t testapp .
              '''  
         }
