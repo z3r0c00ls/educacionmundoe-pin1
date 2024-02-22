@@ -14,7 +14,7 @@ pipeline {
             steps {
                 script {
                     // Credenciales de Docker Hub almacenadas en Jenkins
-                    withCredentials([usernamePassword(credentialsId: 'docker_hub_cred', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
+                    withCredentials([usernamePassword(credentialsId: 'cred_docker_hub', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
                         def registryCredentials = "-u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD}"
                         sh "docker login $registryCredentials"
                     }
