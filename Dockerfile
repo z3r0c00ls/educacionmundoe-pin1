@@ -9,4 +9,5 @@ EXPOSE 3000
 
 ADD . /app
 
-CMD ["node", "index"]
+# Modificamos el comando para que la aplicación escuche en todas las interfaces de red
+CMD ["node", "index", "0.0.0.0"]
